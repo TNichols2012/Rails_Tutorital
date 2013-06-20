@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 Product.delete_all
 #...
-Product.create(title: 'Twelfth Planet: Book I of the Earth Chronicles',
+Product.create(title: 'The Twelfth Planet: Book I of the Earth Chronicles',
   description:
     %{<p>Over the years, startling evidence has been uncovered, challenging established notions of the origins of life on Earth—evidence that suggests the existence of an advanced group of extraterrestrials who once inhabited our world.
 
