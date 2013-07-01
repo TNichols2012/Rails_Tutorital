@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Pragprog Books Online Store</title>
+<title>My Book Collection</title>
+
 <%= stylesheet_link_tag "application", media: "all",#
     "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
@@ -16,16 +17,21 @@
   <div id="columns">
     <div id="side"> 
       <div id="cart">
-        <%= render @cart %>
+        <% if @cart %>
+          <%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
+            <%= render @cart %> 
+          <% end %>
+        <% end %>
       </div>
 
-    	<ul>
-<li><a href="http://www....">Home</a></li>
-<li><a href="http://www..../faq">Questions</a></li> <li><a href="http://www..../news">News</a></li>
-<li><a href="http://www..../contact">Contact</a></li> </ul>
-</div>
-<div id="main">
-<%= yield %>
+      <ul>
+      <li><a href="localhost:3000">Home</a></li>
+      <li><a href="http://www..../faq">Questions</a></li> 
+      <li><a href="http://www..../news">News</a></li>
+      <li><a href="http://www..../contact">Contact</a></li> </ul>
+      </div>
+      <div id="main">
+      <%= yield %>
     </div>
   </div>
 </body>
